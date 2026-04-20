@@ -70,7 +70,7 @@
       'idx.sup.h3': 'SUP Board',
       'idx.sup.p': 'Stand-up paddleboard included at no extra cost.',
       'idx.sight.h3': 'Sightseeing &amp; Shopping',
-      'idx.sight.p': 'Local attractions and shops in Nynäshamn. ↗',
+      'idx.sight.p': 'We\'ve curated a Google Map with our favourite points of interest around Nynäshamn — restaurants, swimming spots, sights and more. Feel free to reach out with any questions or suggestions. ↗',
 
       // ── boat ──────────────────────────────────────────────────────
       'boat.back': '← Back to Welcome',
@@ -220,7 +220,7 @@
       'idx.sup.h3': 'SUP-Board',
       'idx.sup.p': 'Stand-up-Paddleboard kostenlos inklusive.',
       'idx.sight.h3': 'Sehenswürdigkeiten &amp; Einkaufen',
-      'idx.sight.p': 'Ausflugsziele und Einkaufsmöglichkeiten in Nynäshamn. ↗',
+      'idx.sight.p': 'Wir haben eine Google Maps-Karte mit unseren liebsten Sehenswürdigkeiten rund um Nynäshamn zusammengestellt — Restaurants, Badestellen, Ausflugsziele und mehr. Bei Fragen oder Anregungen sind wir gerne für Sie da. ↗',
 
       // ── boat ──────────────────────────────────────────────────────
       'boat.back': '← Zurück zur Übersicht',
