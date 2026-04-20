@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Degerholmen — Island Retreat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+
+  <!-- Nav -->
+  <header class="bg-emerald-950 text-white sticky top-0 z-50 shadow-lg">
+    <nav class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-serif text-lg font-bold tracking-tight">Degerholmen</a>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="index.html" data-i18n="nav.welcome" class="text-white font-semibold hidden sm:block">Welcome</a>
+        <a href="boat.html" data-i18n="nav.boat" class="text-emerald-300 hover:text-white transition hidden sm:block">Boat</a>
+        <a href="upgrades.html" data-i18n="nav.upgrades" class="text-emerald-300 hover:text-white transition hidden sm:block">Upgrades</a>
+        <!-- Language picker -->
+        <div class="hidden sm:flex items-center border border-emerald-700 rounded-lg overflow-hidden text-xs font-bold">
+          <button id="lang-en" onclick="setLang('en')" class="px-2.5 py-1.5 transition bg-emerald-700 text-white">EN</button>
+          <button id="lang-de" onclick="setLang('de')" class="px-2.5 py-1.5 transition text-emerald-400 hover:text-white">DE</button>
+        </div>
+        <a href="https://www.airbnb.com/h/degerholmen" target="_blank"
+           data-i18n="nav.book"
+           class="bg-amber-500 hover:bg-amber-400 text-white px-4 py-2 rounded-lg font-semibold transition text-sm whitespace-nowrap">
+          Book on Airbnb ↗
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative bg-emerald-950 text-white overflow-hidden">
+    <img src="img/viewfromdegis.jpeg" alt="View from Degerholmen"
+         class="absolute inset-0 w-full h-full object-cover opacity-40">
+    <div class="absolute inset-0 bg-gradient-to-b from-emerald-950/60 to-emerald-950/80"></div>
+    <div class="relative max-w-5xl mx-auto px-6 py-24 md:py-32">
+      <p data-i18n="idx.hero.eyebrow" class="text-emerald-400 text-xs font-semibold tracking-widest uppercase mb-4">Nynäshamn · Stockholm Archipelago</p>
+      <h1 data-i18n="idx.hero.h1" class="font-serif text-5xl md:text-6xl font-bold mb-6 leading-tight">Welcome to<br>Degerholmen</h1>
+      <p data-i18n="idx.hero.p" class="text-emerald-100 text-xl max-w-2xl leading-relaxed mb-10">
+        A secluded summer retreat on a small island — tucked away in the Stockholm archipelago, surrounded by calm water and untouched nature.
+      </p>
+      <a href="https://www.airbnb.com/h/degerholmen" target="_blank"
+         data-i18n="idx.hero.cta"
+         class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-white font-semibold px-6 py-3 rounded-xl transition">
+        View Listing on Airbnb ↗
+      </a>
+    </div>
+  </section>
+
+  <main class="max-w-5xl mx-auto px-6 py-16 space-y-20">
+
+    <!-- Arrival -->
+    <section>
+      <h2 data-i18n="idx.arrival.h2" class="font-serif text-3xl font-bold mb-2">Getting Here</h2>
+      <p data-i18n="idx.arrival.sub" class="text-stone-500 mb-8">Everything you need for a smooth arrival.</p>
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-stone-100">
+          <div class="w-11 h-11 bg-emerald-100 rounded-xl flex items-center justify-center text-xl mb-5">⚓</div>
+          <h3 data-i18n="idx.checkin.h3" class="font-semibold text-lg mb-2">Check-in</h3>
+          <p data-i18n="idx.checkin.p" class="text-stone-600 leading-relaxed mb-4">Check-in is at <strong class="text-stone-800">15:00</strong>. Head to the dock for boat transfer to the island.</p>
+          <a href="https://maps.app.goo.gl/QBjnXJ3BNkKnUvqHA" target="_blank"
+             class="inline-flex items-center gap-1 text-emerald-700 font-semibold text-sm hover:underline">
+            📍 Bredlötsvägen 8, Nynäshamn ↗
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-stone-100">
+          <div class="w-11 h-11 bg-emerald-100 rounded-xl flex items-center justify-center text-xl mb-5">🅿️</div>
+          <h3 data-i18n="idx.parking.h3" class="font-semibold text-lg mb-2">Parking</h3>
+          <p data-i18n="idx.parking.p" class="text-stone-600 leading-relaxed">Your designated lot is marked <strong class="text-stone-800">1:14</strong>. Please park as close to the right as possible — there is space for two cars parked one behind the other, nose-in. This keeps the space clear for everyone. If you have any trouble finding the lot, don't hesitate to contact us.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Boat + Upgrades photo cards -->
+    <section>
+      <h2 data-i18n="idx.water.h2" class="font-serif text-3xl font-bold mb-2">On The Water</h2>
+      <p data-i18n="idx.water.sub" class="text-stone-500 mb-8">A motorboat is included. Upgrades are available to make the most of the archipelago.</p>
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <a href="boat.html" class="relative group rounded-2xl overflow-hidden h-64 flex items-end shadow-md">
+          <img src="img/boat.jpg" alt="Tangerine Dream motorboat"
+               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+          <div class="relative p-6 text-white">
+            <p data-i18n="idx.boat.eyebrow" class="text-xs font-semibold tracking-widest uppercase text-white/60 mb-1">Included with your stay</p>
+            <h3 class="font-serif text-2xl font-bold">Tangerine Dream</h3>
+            <p data-i18n="idx.boat.p" class="text-white/75 text-sm mt-1">9.9hp Mercury · 6 passengers · no licence needed</p>
+            <span data-i18n="idx.boat.cta" class="inline-block mt-3 text-sm font-semibold text-white group-hover:underline">View boat guide →</span>
+          </div>
+        </a>
+
+        <a href="upgrades.html" class="relative group rounded-2xl overflow-hidden h-64 flex items-end shadow-md">
+          <img src="img/finnmaster-wide.jpg" alt="Finnmaster premium motorboat"
+               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+          <div class="relative p-6 text-white">
+            <p data-i18n="idx.up.eyebrow" class="text-xs font-semibold tracking-widest uppercase text-amber-400 mb-1">Optional add-on</p>
+            <h3 class="font-serif text-2xl font-bold">Upgrades</h3>
+            <p data-i18n="idx.up.p" class="text-white/75 text-sm mt-1">Finnmaster 50hp · kayak rentals · from €60/week</p>
+            <span data-i18n="idx.up.cta" class="inline-block mt-3 text-sm font-semibold text-amber-400 group-hover:underline">View upgrades →</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Facilities -->
+    <section>
+      <h2 data-i18n="idx.fac.h2" class="font-serif text-3xl font-bold mb-2">Facilities</h2>
+      <p data-i18n="idx.fac.sub" class="text-stone-500 mb-8">What's included during your stay.</p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
+          <div class="text-2xl mb-4">🛜</div>
+          <h3 data-i18n="idx.wifi.h3" class="font-semibold mb-2">Wi-Fi</h3>
+          <p data-i18n="idx.wifi.p" class="text-stone-500 text-sm leading-relaxed">Network: <strong class="text-stone-700">Degis</strong>. Password given at check-in.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
+          <div class="text-2xl mb-4">💧</div>
+          <h3 data-i18n="idx.wellwater.h3" class="font-semibold mb-2">Well Water</h3>
+          <p data-i18n="idx.wellwater.p" class="text-stone-500 text-sm leading-relaxed">The property has its own well providing fresh, clean water that is regularly tested and safe to drink. Being on an island with limited resources, we kindly ask you to conserve water where possible — take shorter showers, turn off the tap while brushing your teeth, and promptly report any leaks.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
+          <div class="text-2xl mb-4">🌡️</div>
+          <h3 data-i18n="idx.climate.h3" class="font-semibold mb-2">Heating &amp; Cooling</h3>
+          <p data-i18n="idx.climate.p" class="text-stone-500 text-sm leading-relaxed">The house has a heat pump system providing both heating and air conditioning year-round, controlled via remote. The wall radiators are reserved for winter use only.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
+          <div class="text-2xl mb-4">🔥</div>
+          <h3 data-i18n="idx.sauna.h3" class="font-semibold mb-2">Wood Sauna</h3>
+          <p data-i18n="idx.sauna.p" class="text-stone-500 text-sm leading-relaxed">Use <strong class="text-stone-700">fresh tap water only</strong> for creating steam — never seawater. Salt damages the stove and affects its functionality. Firewood is stocked by the green shed and ready for use.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
+          <div class="text-2xl mb-4">🗑️</div>
+          <h3 data-i18n="idx.trash.h3" class="font-semibold mb-2">Trash &amp; Recycling</h3>
+          <p data-i18n="idx.trash.p" class="text-stone-500 text-sm leading-relaxed">The bin is located behind the parking lot and is locked to prevent wildlife from accessing it. Use the <strong class="text-stone-700">blue keychain</strong> to unlock it. Proper disposal helps keep the island clean and beautiful. If you have any questions about recycling, feel free to reach out.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100 border-l-4 border-l-red-400">
+          <div class="text-2xl mb-4">🚨</div>
+          <h3 data-i18n="idx.safety.h3" class="font-semibold mb-2">Safety</h3>
+          <p data-i18n="idx.safety.p" class="text-stone-500 text-sm leading-relaxed">Fire alarms, extinguishers, fire blankets &amp; first aid kits throughout.</p>
+          <p data-i18n="idx.safety.emg" class="mt-3 text-red-600 font-bold text-sm">Emergency: 112</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Toilet -->
+    <section id="toilet">
+      <h2 data-i18n="idx.toilet.h2" class="font-serif text-3xl font-bold mb-2">Toilet</h2>
+      <p data-i18n="idx.toilet.sub" class="text-stone-500 mb-8">The Cinderella incineration toilet — eco-friendly and clean. Just follow these steps.</p>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100 flex gap-5">
+            <div class="w-9 h-9 bg-emerald-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">1</div>
+            <div>
+              <h3 data-i18n="idx.t1.h3" class="font-semibold mb-1">Place the filter paper</h3>
+              <p data-i18n="idx.t1.p" class="text-stone-500 text-sm leading-relaxed">Before each use, place a filter paper in the bowl — this is essential for the incineration process to work correctly.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100 flex gap-5">
+            <div class="w-9 h-9 bg-emerald-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">2</div>
+            <div>
+              <h3 data-i18n="idx.t2.h3" class="font-semibold mb-1">Use the toilet</h3>
+              <p data-i18n="idx.t2.p" class="text-stone-500 text-sm leading-relaxed">For number two with minimal waste, add a couple of cups of water to the filter paper first so the flush works properly.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100 flex gap-5">
+            <div class="w-9 h-9 bg-emerald-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">3</div>
+            <div>
+              <h3 data-i18n="idx.t3.h3" class="font-semibold mb-1">Close lid &amp; press start</h3>
+              <p data-i18n="idx.t3.p" class="text-stone-500 text-sm leading-relaxed">Close the lid and press start. Incineration runs automatically — no need to wait.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-stone-100 rounded-2xl p-6 flex gap-4">
+            <div class="text-2xl flex-shrink-0">🌲</div>
+            <div>
+              <h3 data-i18n="idx.tp1.h3" class="font-semibold mb-1">Just need to pee?</h3>
+              <p data-i18n="idx.tp1.p" class="text-stone-500 text-sm leading-relaxed">Going in the forest is perfectly fine — and it helps preserve toilet capacity.</p>
+            </div>
+          </div>
+          <div class="bg-stone-100 rounded-2xl p-6 flex gap-4">
+            <div class="text-2xl flex-shrink-0">🔧</div>
+            <div>
+              <h3 data-i18n="idx.tp2.h3" class="font-semibold mb-1">Stuck filter?</h3>
+              <p data-i18n="idx.tp2.p" class="text-stone-500 text-sm leading-relaxed">Place a new filter on top, add ~0.5 litres of water, and flush again.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- More to Explore -->
+    <section>
+      <h2 data-i18n="idx.more.h2" class="font-serif text-3xl font-bold mb-2">More to Explore</h2>
+      <p data-i18n="idx.more.sub" class="text-stone-500 mb-8">Swimming, paddling, and sightseeing — there's plenty to keep you busy.</p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
+          <div class="text-2xl mb-4">🏊</div>
+          <h3 data-i18n="idx.swim.h3" class="font-semibold mb-2">Swimming</h3>
+          <p data-i18n="idx.swim.p" class="text-stone-500 text-sm leading-relaxed">The best swimming spot is between the ladder and the boat dock, where the water is deep and calm. A great place to cool off on a warm summer day.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
+          <div class="text-2xl mb-4">🏄</div>
+          <h3 data-i18n="idx.sup.h3" class="font-semibold mb-2">SUP Board</h3>
+          <p data-i18n="idx.sup.p" class="text-stone-500 text-sm leading-relaxed">Stand-up paddleboard included at no extra cost.</p>
+        </div>
+
+        <a href="https://maps.app.goo.gl/AbZjjgHM7d63daccA" target="_blank"
+           class="group bg-white rounded-2xl p-6 shadow-sm border border-stone-100 hover:border-emerald-200 hover:shadow-md transition">
+          <div class="text-2xl mb-4">🗺️</div>
+          <h3 data-i18n="idx.sight.h3" class="font-semibold mb-2 group-hover:text-emerald-700 transition-colors">Sightseeing &amp; Shopping</h3>
+          <p data-i18n="idx.sight.p" class="text-stone-500 text-sm leading-relaxed">Local attractions and shops in Nynäshamn. ↗</p>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-emerald-950 text-emerald-300 py-10 px-6 mt-8">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <span class="font-serif text-lg font-bold text-white">Degerholmen</span>
+      <span data-i18n="footer.sub" class="text-emerald-500">Nynäshamn, Stockholm Archipelago</span>
+      <a href="https://www.airbnb.com/h/degerholmen" target="_blank"
+         data-i18n="footer.book"
+         class="text-amber-400 hover:text-amber-300 font-semibold transition">Book on Airbnb ↗</a>
+    </div>
+  </footer>
+
+  <script src="lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boat — Degerholmen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+
+  <!-- Nav -->
+  <header class="bg-emerald-950 text-white sticky top-0 z-50 shadow-lg">
+    <nav class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-serif text-lg font-bold tracking-tight">Degerholmen</a>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="index.html" data-i18n="nav.welcome" class="text-emerald-300 hover:text-white transition hidden sm:block">Welcome</a>
+        <a href="boat.html" data-i18n="nav.boat" class="text-white font-semibold hidden sm:block">Boat</a>
+        <a href="upgrades.html" data-i18n="nav.upgrades" class="text-emerald-300 hover:text-white transition hidden sm:block">Upgrades</a>
+        <div class="hidden sm:flex items-center border border-emerald-700 rounded-lg overflow-hidden text-xs font-bold">
+          <button id="lang-en" onclick="setLang('en')" class="px-2.5 py-1.5 transition bg-emerald-700 text-white">EN</button>
+          <button id="lang-de" onclick="setLang('de')" class="px-2.5 py-1.5 transition text-emerald-400 hover:text-white">DE</button>
+        </div>
+        <a href="https://www.airbnb.com/h/degerholmen" target="_blank"
+           data-i18n="nav.book"
+           class="bg-amber-500 hover:bg-amber-400 text-white px-4 py-2 rounded-lg font-semibold transition text-sm whitespace-nowrap">
+          Book on Airbnb ↗
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative bg-emerald-950 text-white overflow-hidden">
+    <img src="img/boat.jpg" alt="Tangerine Dream motorboat"
+         class="absolute inset-0 w-full h-full object-cover opacity-30">
+    <div class="relative max-w-5xl mx-auto px-6 py-24">
+      <a href="index.html" data-i18n="boat.back" class="inline-flex items-center gap-1 text-emerald-400 text-sm mb-6 hover:text-emerald-300 transition">← Back to Welcome</a>
+      <p data-i18n="boat.eyebrow" class="text-emerald-400 text-xs font-semibold tracking-widest uppercase mb-3">Included with your stay</p>
+      <h1 class="font-serif text-5xl font-bold mb-4">Tangerine Dream</h1>
+      <p data-i18n="boat.hero.p" class="text-emerald-100 text-xl max-w-xl leading-relaxed">A small orange motorboat for six, powered by a 9.9hp Mercury engine — your gateway to the archipelago. No licence required under Swedish law.</p>
+    </div>
+  </section>
+
+  <main class="max-w-5xl mx-auto px-6 py-16 space-y-14">
+
+    <!-- Stats -->
+    <section class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100 text-center">
+        <div class="text-3xl mb-3">👥</div>
+        <div class="font-bold text-2xl mb-1">6</div>
+        <div data-i18n="boat.stat1.label" class="text-stone-500 text-sm">Passengers max</div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100 text-center">
+        <div class="text-3xl mb-3">⚙️</div>
+        <div class="font-bold text-2xl mb-1">9.9hp</div>
+        <div data-i18n="boat.stat2.label" class="text-stone-500 text-sm">Mercury outboard engine</div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-100 text-center">
+        <div class="text-3xl mb-3">✅</div>
+        <div data-i18n="boat.stat3.val" class="font-bold text-2xl mb-1">No licence</div>
+        <div data-i18n="boat.stat3.label" class="text-stone-500 text-sm">Required under Swedish law</div>
+      </div>
+    </section>
+
+    <!-- Getting Started -->
+    <section>
+      <h2 data-i18n="boat.gs.h2" class="font-serif text-3xl font-bold mb-2">Getting Started</h2>
+      <p data-i18n="boat.gs.sub" class="text-stone-500 mb-8">Basic instructions are given at check-in. Keep these in mind while out on the water.</p>
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-stone-100">
+          <h3 data-i18n="boat.op.h3" class="font-semibold text-lg mb-4">Operating the Boat</h3>
+          <ul class="space-y-3 text-stone-600 text-sm leading-relaxed">
+            <li class="flex gap-3 items-start"><span class="text-emerald-500 font-bold shrink-0">→</span><span data-i18n="boat.op1">Operators must have prior boating experience and basic maritime knowledge.</span></li>
+            <li class="flex gap-3 items-start"><span class="text-emerald-500 font-bold shrink-0">→</span><span data-i18n="boat.op2">The archipelago has shallow spots and submerged rocks — always use a navigation app. We recommend <strong class="font-semibold text-stone-800">Skippo</strong>, which is free for basic use.</span></li>
+            <li class="flex gap-3 items-start"><span class="text-emerald-500 font-bold shrink-0">→</span><span data-i18n="boat.op3">Observe all speed limits and designated boating areas.</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-stone-100">
+          <h3 data-i18n="boat.au.h3" class="font-semibold text-lg mb-4">After Use</h3>
+          <ul class="space-y-3 text-stone-600 text-sm leading-relaxed">
+            <li class="flex gap-3 items-start"><span class="text-emerald-500 font-bold shrink-0">→</span><span data-i18n="boat.au1">Return the boat to its original location and secure it properly.</span></li>
+            <li class="flex gap-3 items-start"><span class="text-emerald-500 font-bold shrink-0">→</span><span data-i18n="boat.au2">Verify all equipment is accounted for.</span></li>
+            <li class="flex gap-3 items-start"><span class="text-emerald-500 font-bold shrink-0">→</span><span data-i18n="boat.au3">Report any damage immediately.</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Safety -->
+    <section>
+      <h2 data-i18n="boat.safe.h2" class="font-serif text-3xl font-bold mb-6">Safety Rules</h2>
+      <div class="bg-red-50 border border-red-200 rounded-2xl p-7 space-y-5">
+
+        <div class="flex items-start gap-4">
+          <div class="text-2xl">🦺</div>
+          <div>
+            <h3 data-i18n="boat.lj.h3" class="font-semibold text-red-800 mb-1">Life Jackets — Mandatory</h3>
+            <p data-i18n="boat.lj.p" class="text-red-700 text-sm leading-relaxed">All persons on the motorboat must wear a lifejacket at all times. Life jackets are stored in the dock storage box.</p>
+          </div>
+        </div>
+        <hr class="border-red-200">
+        <div class="flex items-start gap-4">
+          <div class="text-2xl">👶</div>
+          <div>
+            <h3 data-i18n="boat.child.h3" class="font-semibold text-red-800 mb-1">Children</h3>
+            <p data-i18n="boat.child.p" class="text-red-700 text-sm leading-relaxed">Adult supervision is required for children at all times on the boat.</p>
+          </div>
+        </div>
+        <hr class="border-red-200">
+        <div class="flex items-start gap-4">
+          <div class="text-2xl">🚫</div>
+          <div>
+            <h3 data-i18n="boat.alc.h3" class="font-semibold text-red-800 mb-1">Alcohol &amp; Drugs</h3>
+            <p data-i18n="boat.alc.p" class="text-red-700 text-sm leading-relaxed">Operating the boat under the influence of alcohol or drugs is prohibited under Swedish maritime law.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Fuel -->
+    <section>
+      <h2 data-i18n="boat.fuel.h2" class="font-serif text-3xl font-bold mb-6">Fuel Policy</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-stone-100">
+          <h3 data-i18n="boat.tanks.h3" class="font-semibold text-lg mb-4">Tanks</h3>
+          <ul class="space-y-3 text-stone-600 text-sm leading-relaxed">
+            <li class="flex gap-3 items-start"><span class="text-emerald-500 font-bold shrink-0">→</span><span data-i18n="boat.tank1">25-litre internal tank — provided <strong class="text-stone-800">fully fuelled</strong>.</span></li>
+            <li class="flex gap-3 items-start"><span class="text-emerald-500 font-bold shrink-0">→</span><span data-i18n="boat.tank2">5-litre emergency tank on board.</span></li>
+            <li class="flex gap-3 items-start"><span class="text-emerald-500 font-bold shrink-0">→</span><span data-i18n="boat.tank3">Extra fuel will be supplied if needed.</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-amber-50 rounded-2xl p-7 border border-amber-100">
+          <h3 data-i18n="boat.refuel.h3" class="font-semibold text-lg mb-4">Refuelling</h3>
+          <p data-i18n="boat.refuel.p" class="text-stone-600 text-sm leading-relaxed mb-4">The boat must be returned <strong class="text-stone-800">fully fuelled</strong>. Fuel costs <strong class="text-stone-800">€2.50 / litre</strong>, payable via:</p>
+          <div class="flex flex-wrap gap-2 text-sm font-medium">
+            <span data-i18n="boat.pay1" class="bg-white border border-amber-200 text-amber-800 px-3 py-1 rounded-full">PayPal</span>
+            <span data-i18n="boat.pay2" class="bg-white border border-amber-200 text-amber-800 px-3 py-1 rounded-full">Revolut</span>
+            <span data-i18n="boat.pay3" class="bg-white border border-amber-200 text-amber-800 px-3 py-1 rounded-full">Bank transfer</span>
+          </div>
+          <p data-i18n="boat.refuel.note" class="text-stone-400 text-xs mt-4">Guests are responsible for any damage caused by improper refuelling.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Upgrade CTA -->
+    <a href="upgrades.html" class="group block relative rounded-2xl overflow-hidden h-48 shadow-md">
+      <img src="img/finnmaster-wide.jpg" alt="Finnmaster upgrade"
+           class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
+      <div class="relative h-full flex items-center justify-between px-8">
+        <div class="text-white">
+          <p data-i18n="boat.up.eyebrow" class="text-amber-400 text-xs font-semibold tracking-widest uppercase mb-2">Optional upgrade</p>
+          <h3 data-i18n="boat.up.h3" class="font-serif text-2xl font-bold mb-1">Want more power?</h3>
+          <p data-i18n="boat.up.p" class="text-white/75 text-sm">Finnmaster 4900CTX · 50hp · 27–30 knots · GPS chart plotter</p>
+        </div>
+        <span data-i18n="boat.up.btn" class="flex-shrink-0 bg-amber-500 group-hover:bg-amber-400 text-white font-semibold px-5 py-2.5 rounded-xl transition text-sm ml-6">View Upgrades →</span>
+      </div>
+    </a>
+
+  </main>
+
+  <footer class="bg-emerald-950 text-emerald-300 py-10 px-6 mt-8">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <span class="font-serif text-lg font-bold text-white">Degerholmen</span>
+      <span data-i18n="footer.sub" class="text-emerald-500">Nynäshamn, Stockholm Archipelago</span>
+      <a href="https://www.airbnb.com/h/degerholmen" target="_blank"
+         data-i18n="footer.book"
+         class="text-amber-400 hover:text-amber-300 font-semibold transition">Book on Airbnb ↗</a>
+    </div>
+  </footer>
+
+  <script src="lang.js"></script>
+</body>
+</html>
