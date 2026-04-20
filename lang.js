@@ -33,7 +33,7 @@
       'idx.up.cta': 'View upgrades →',
 
       'idx.fac.h2': 'Facilities',
-      'idx.fac.sub': 'What\'s included during your stay.',
+      'idx.fac.sub': 'How things work at the property.',
       'idx.wifi.h3': 'Wi-Fi',
       'idx.wifi.p': 'Network: <strong class="text-stone-700">Degis</strong>. Password given at check-in.',
       'idx.wellwater.h3': 'Well Water',
@@ -183,7 +183,7 @@
       'idx.up.cta': 'Upgrades ansehen →',
 
       'idx.fac.h2': 'Ausstattung',
-      'idx.fac.sub': 'Was in Ihrem Aufenthalt enthalten ist.',
+      'idx.fac.sub': 'So funktionieren die Dinge auf dem Anwesen.',
       'idx.wifi.h3': 'WLAN',
       'idx.wifi.p': 'Netzwerk: <strong class="text-stone-700">Degis</strong>. Passwort erhalten Sie beim Check-in.',
       'idx.wellwater.h3': 'Brunnenwasser',
