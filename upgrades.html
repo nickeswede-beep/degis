@@ -31,16 +31,40 @@
         <a href="boat.html" data-i18n="nav.boat" class="text-emerald-300 hover:text-white transition hidden sm:block">Boat</a>
         <a href="upgrades.html" data-i18n="nav.upgrades" class="text-white font-semibold hidden sm:block">Upgrades</a>
         <div class="hidden sm:flex items-center border border-emerald-700 rounded-lg overflow-hidden text-xs font-bold">
-          <button id="lang-en" onclick="setLang('en')" class="px-2.5 py-1.5 transition bg-emerald-700 text-white">EN</button>
-          <button id="lang-de" onclick="setLang('de')" class="px-2.5 py-1.5 transition text-emerald-400 hover:text-white">DE</button>
+          <button data-lang="en" onclick="setLang('en')" class="px-2.5 py-1.5 transition bg-emerald-700 text-white">EN</button>
+          <button data-lang="de" onclick="setLang('de')" class="px-2.5 py-1.5 transition text-emerald-400 hover:text-white">DE</button>
         </div>
         <a href="https://www.airbnb.com/h/degerholmen" target="_blank"
            data-i18n="nav.book"
-           class="bg-amber-500 hover:bg-amber-400 text-white px-4 py-2 rounded-lg font-semibold transition text-sm whitespace-nowrap">
+           class="hidden sm:block bg-amber-500 hover:bg-amber-400 text-white px-4 py-2 rounded-lg font-semibold transition text-sm whitespace-nowrap">
+          Book on Airbnb ↗
+        </a>
+        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                class="sm:hidden p-2 rounded-lg hover:bg-emerald-800 transition" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden sm:hidden border-t border-emerald-800 px-6 py-4 space-y-1 shadow-xl">
+      <a href="index.html" data-i18n="nav.welcome" class="block py-3 text-emerald-300 text-sm border-b border-emerald-900">Welcome</a>
+      <a href="boat.html" data-i18n="nav.boat" class="block py-3 text-emerald-300 text-sm border-b border-emerald-900">Boat</a>
+      <a href="upgrades.html" data-i18n="nav.upgrades" class="block py-3 text-white font-semibold text-sm border-b border-emerald-900">Upgrades</a>
+      <div class="py-3 flex items-center justify-between border-b border-emerald-900">
+        <span class="text-emerald-400 text-xs font-semibold uppercase tracking-wider">Language</span>
+        <div class="flex items-center border border-emerald-700 rounded-lg overflow-hidden text-xs font-bold">
+          <button data-lang="en" onclick="setLang('en')" class="px-3 py-1.5 transition bg-emerald-700 text-white">EN</button>
+          <button data-lang="de" onclick="setLang('de')" class="px-3 py-1.5 transition text-emerald-400">DE</button>
+        </div>
+      </div>
+      <div class="pt-3">
+        <a href="https://www.airbnb.com/h/degerholmen" target="_blank" data-i18n="nav.book"
+           class="block text-center bg-amber-500 hover:bg-amber-400 text-white font-semibold px-4 py-3 rounded-xl transition text-sm">
           Book on Airbnb ↗
         </a>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!-- Hero -->

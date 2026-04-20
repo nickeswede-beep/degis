@@ -308,12 +308,11 @@
         el.innerHTML = T[lang][key];
       }
     });
-    ['en', 'de'].forEach(function (l) {
-      var btn = document.getElementById('lang-' + l);
-      if (!btn) return;
-      btn.classList.toggle('bg-emerald-700', l === lang);
-      btn.classList.toggle('text-white', l === lang);
-      btn.classList.toggle('text-emerald-400', l !== lang);
+    document.querySelectorAll('[data-lang]').forEach(function (btn) {
+      var active = btn.dataset.lang === lang;
+      btn.classList.toggle('bg-emerald-700', active);
+      btn.classList.toggle('text-white', active);
+      btn.classList.toggle('text-emerald-400', !active);
     });
     try { localStorage.setItem('lang', lang); } catch (e) {}
   }
